@@ -1,15 +1,12 @@
 <template>
   <div>
-    <h1>{{ message }}</h1>
+    <img alt="Vue logo" src="../assets/logo.png" width="100" />
   </div>
 </template>
 
 <script>
 export default {
-  name: 'HelloWorld',
-  props: {
-    message: String
-  }
+  name: "Logo"
 }
 </script>
 
