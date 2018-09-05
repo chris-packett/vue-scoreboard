@@ -1,6 +1,6 @@
 <template>
   <div class="team">
-    <Scoreboard v-bind:teamName="this.teamName" v-bind:teamScore="this.teamScore" />
+    <Scoreboard v-bind:teamName="teamName" v-bind:teamScore="teamScore" />
     <Update />
   </div>
 </template>

@@ -3,8 +3,14 @@
     <Logo />
     <HelloWorld message="Welcome to the Vue Scoreboard!"/>
     <div class="teams">
-      <Team teamName="Team 1" v-bind:teamScore="0" />
-      <Team teamName="Team 2" v-bind:teamScore="0" />
+      <div class="team">
+        <Scoreboard v-bind:teamName="teamOneName" v-bind:teamScore="teamOneScore" />
+        <Update />
+      </div>
+      <div class="team">
+        <Scoreboard v-bind:teamName="teamTwoName" v-bind:teamScore="teamTwoScore" />
+        <Update />
+      </div>
     </div>
   </div>
 </template>
@@ -12,14 +18,24 @@
 <script>
 import HelloWorld from './components/HelloWorld.vue'
 import Logo from './components/Logo.vue'
-import Team from './components/Team.vue'
+import Scoreboard from './components/Scoreboard.vue'
+import Update from './components/Update.vue'
 
 export default {
   name: 'app',
   components: {
     HelloWorld,
     Logo,
-    Team
+    Scoreboard,
+    Update
+  },
+  data: function () {
+    return {
+      teamOneName: 'Team 1 Name',
+      teamOneScore: 0,
+      teamTwoName: 'Team 2 Name',
+      teamTwoScore: 0
+    }
   }
 }
 </script>
@@ -37,5 +53,9 @@ export default {
 .teams {
   display: flex;
   justify-content: space-evenly;
+}
+
+.team-score {
+  font-size: 48px;
 }
 </style>
